@@ -1,25 +1,16 @@
-# Manhaj
+# React + Vite
 
-A web app for university students who are trying to keep up with classes while also figuring out what to do beyond them. Built for the Eureka hackathon 2026.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Most of us have deadlines in one place, ideas about skills we should learn somewhere else, and internship posts scattered across group chats. Manhaj puts it all in one spot and helps you turn it into a plan that fits the hours you actually have.
+Currently, two official plugins are available:
 
-## What's in it
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-- **My Week**: your courses, deadlines, and free hours, plus a place to plan tasks around them
-- **My Growth**: pick skills you want to build and see what to focus on first
-- **Learn & Build**: learning resources and project ideas matched to those skills
-- **Opportunities**: internships, hackathons, events, and competitions worth a look
-- **My Profile**: your university details, goals, interests, and preferences
+## React Compiler
 
-## How the demo goes
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-You set up your profile and add your academic context. Manhaj suggests a skill to work on and a resource for it. You add that resource to My Week and track your progress from there.
+## Expanding the ESLint configuration
 
-## Built with
-
-React, Vite, and CSS, with Git/GitHub for version control. Supabase is planned for the backend but isn't hooked up yet.
-
-## Deadline
-
-October 29, 2026
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
