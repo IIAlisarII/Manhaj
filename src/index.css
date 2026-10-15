@@ -1,13 +1,16 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
+  --text: rgb(102, 115, 107);
+  --text-h: rgb(36, 49, 43);           
+  --bg: rgb(247, 248, 245);             
+  --border: rgb(223, 230, 224);       
+  --code-bg: rgb(232, 242, 236);        
+  --accent: rgb(23, 107, 82);           
+  --accent-bg: rgb(232, 242, 236);      
+  --accent-border: rgba(23, 107, 82, 0.5);
+  --social-bg: rgb(232, 242, 236);
+   --accent-hover: rgb(17, 85, 65);  
+  --card: rgb(255, 255, 255);          
+  --warning: rgb(150, 99, 19);   
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
@@ -18,7 +21,7 @@
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
   color-scheme: light dark;
-  color: var(--text);
+  color: var(--text-h);
   background: var(--bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -32,15 +35,18 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
+    --text: rgb(155, 168, 160);          
+    --text-h: rgb(231, 238, 233);          
+    --bg: rgb(22, 28, 25);                 
+    --border: rgb(46, 58, 51);
+    --code-bg: rgb(30, 40, 35);
+    --accent: rgb(70, 170, 135);        
+    --accent-bg: rgba(70, 170, 135, 0.15);
+    --accent-border: rgba(70, 170, 135, 0.5);
+    --social-bg: rgba(46, 58, 51, 0.5);
+    --accent-hover: rgb(110, 200, 165);  
+    --card: rgb(30, 40, 35);              
+    --warning: rgb(214, 160, 70);        
     --shadow:
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
@@ -66,31 +72,23 @@ body {
   box-sizing: border-box;
 }
 
-h1,
+h1{
+  margin: 0;
+  font-size: 32px;
+  padding: 30px;
+  background-color: var(--accent-border);
+  height: 50px;
+  text-align: left;
+
+}
 h2 {
+  margin: 0;
+  font-size: 18px;
   font-family: var(--heading);
   font-weight: 500;
-  color: var(--text-h);
+  text-align: left;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
 p {
   margin: 0;
 }
@@ -108,4 +106,47 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+ul{
+  list-style: none;
+  padding: 0;
+}
+ul li{
+  list-style-type: none;
+  margin: 10px 0;
+}
+ul li a{
+  text-decoration: none;
+  color: var(--text-h);
+  display: block;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+ul li a:hover{
+  color: var(--accent);
+}
+ul li a:active{
+  color: var(--accent-hover);
+}
+
+.Logotemp{
+  width: 60px;
+}
+
+.sidenav {
+  width: 240px;
+  height: 95vh;
+  padding: 0 30px; 
+  position: fixed;
+  background-color: var(--accent-border);
+  transition: all 1s;
+  left: -100%
+}
+
+.sidenav.active {
+  left: 0;
+}
+
+h1 svg {
+  font-size: 40px;
 }
