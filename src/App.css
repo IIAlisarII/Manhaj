@@ -182,3 +182,13 @@
     border-right-color: var(--border);
   }
 }
+
+
+.main{
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
