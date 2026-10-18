@@ -1,16 +1,17 @@
-import './App.css'
-import Navbar from './components/NavBar'
+import './App.css';
+import Navbar from './components/NavBar';
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from 'react';
 
 function App() {
-  return(
-    <div className="App">
-      <h1> <GiHamburgerMenu/></h1>
+  const [ showNav, setShowNav ] = useState(false);
+  return(    <div className="App">
+      <h1> <GiHamburgerMenu onClick={()=> setShowNav(!showNav)}/></h1>
       <h2>
-      <Navbar />
+      <Navbar show={showNav} />
       </h2>
    </div>
   );
 }
 
-export default App
+export default App;
