@@ -58,6 +58,7 @@
 
 body {
   margin: 0;
+  
 }
 
 #root {
@@ -90,6 +91,7 @@ h2 {
 }
 
 p {
+  font-size: 12px;
   margin: 0;
 }
 
@@ -152,4 +154,231 @@ ul li a:active{
 
 h1 svg {
   font-size: 40px;
+}
+.task{
+  flex: 0 0 calc((100% - 32px) / 3);
+  box-sizing: border-box;
+  border: 1px solid rgba(82, 132, 100, 0.699);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 57, 17, 0.1);
+  padding: 30px;
+  margin: 10px;
+  max-width: 250px;
+  display: inline-block;
+}
+.task-title{
+  text-align: center;
+  margin: 0;
+  color: var(--text);
+}
+.task-text{
+  text-align: center;
+  color: var(--text);
+
+}
+.task-row{
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.task.done {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #3f6b4d6b;
+}
+.my-week {
+  padding: 24px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.divider {
+    border: none;
+    border-top: 1px solid #537b6653;
+    margin: 24px 0;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 400;
+}
+ 
+/* page wrapper: full width, left-aligned text */
+.page {
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  box-sizing: border-box;
+  align-self: flex-start;
+}
+.page p {
+  font-size: 14px;
+}
+.page-title {
+  font-size: 26px;
+  margin-bottom: 16px;
+}
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 8px 0 12px;
+}
+.empty {
+  color: var(--text);
+  font-size: 13px;
+}
+ 
+/* buttons and inputs */
+.add-btn {
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+}
+.add-btn:hover {
+  border-color: var(--accent-border);
+}
+.page input,
+.page select,
+.topbar select {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text-h);
+}
+ 
+/* forms */
+.task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.task-form input[type="text"] {
+  flex: 1 1 180px;
+}
+ 
+/* buttons inside a task card */
+.task-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+.task-actions button {
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text-h);
+}
+ 
+/* free hours */
+.free-hours {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.free-hours input {
+  width: 70px;
+}
+.hours-summary {
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.hours-summary.warn {
+  color: var(--warning);
+}
+ 
+/* 7-day grid */
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+  overflow-x: auto;
+}
+.day-col {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 8px;
+  min-height: 160px;
+  min-width: 90px;
+}
+.day-col.today {
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
+.day-col h3 {
+  margin: 0;
+  font-size: 15px;
+  text-align: center;
+}
+.day-hours {
+  text-align: center;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.block {
+  background: var(--accent-bg);
+  border-radius: 8px;
+  padding: 6px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  position: relative;
+}
+.block-title {
+  display: block;
+  padding-right: 14px;
+  color: var(--text-h);
+}
+.block-meta {
+  color: var(--text);
+}
+.block button {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  border: none;
+  background: transparent;
+  color: var(--text-h);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+ 
+@media (max-width: 800px) {
+  .week-grid {
+    grid-template-columns: repeat(7, 110px);
+  }
 }

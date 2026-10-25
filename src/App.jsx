@@ -8,19 +8,31 @@ import MyWeek from "./pages/MyWeek"
 import Growth from "./pages/Growth"
 import Opportunities from "./pages/Opportunities"
 import Profile from "./pages/Profile"
+import { mockStudents } from "./Data";
 
 
 
 function App() {
   const [ showNav, setShowNav ] = useState(false);
-  return(    
+  const [ studentId, setStudentId ] = useState(mockStudents[0].id);
+  return(
     <Router>
-        <h1> <GiHamburgerMenu onClick={()=> setShowNav(!showNav)}/></h1>
+        <h1 className="topbar">
+          <GiHamburgerMenu onClick={()=> setShowNav(!showNav)}/>
+          <span className="topbar-right">
+            Student:
+            <select value={studentId} onChange={(e) => setStudentId(e.target.value)}>
+              {mockStudents.map((s) => (
+                <option key={s.id} value={s.id}>{s.name}</option>
+              ))}
+            </select>
+          </span>
+        </h1>
         <Navbar show={showNav} />
     <div className='main'>
       <Routes>
         <Route path="/pages/Home" exact={true} element={<Home/>}/>
-        <Route path="/pages/MyWeek" exact={true} element={<MyWeek/>}/>
+        <Route path="/pages/MyWeek" exact={true} element={<MyWeek key={studentId} studentId={studentId}/>}/>
         <Route path="/pages/Growth" exact={true} element={<Growth/>}/>
 
         <Route path="/pages/Opportunities" exact={true} element={<Opportunities/>}/>
