@@ -33,10 +33,10 @@ function App() {
       <Routes>
         <Route path="/pages/Home" exact={true} element={<Home/>}/>
         <Route path="/pages/MyWeek" exact={true} element={<MyWeek key={studentId} studentId={studentId}/>}/>
-        <Route path="/pages/Growth" exact={true} element={<Growth/>}/>
+        <Route path="/pages/Growth" exact={true} element={<Growth key={studentId} studentId={studentId}/>}/>
 
         <Route path="/pages/Opportunities" exact={true} element={<Opportunities/>}/>
-        <Route path="/pages/Profile" exact={true} element={<Profile/>}/>
+        <Route path="/pages/Profile" exact={true} element={<Profile key={studentId} studentId={studentId}/>}/>
         </Routes>
     </div>
    </Router>
